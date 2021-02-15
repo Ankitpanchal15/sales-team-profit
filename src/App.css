@@ -64,7 +64,9 @@ button:focus {
   box-shadow: none;
 }
 
-
+#sidebar {
+  height: 0;
+}
 
 .sidebar-left {
 	background-color: #222c3c !important;
@@ -88,10 +90,6 @@ button:focus {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-}
-.sidebar-left .user-list {
-
-
 }
 .sidebar-left .user-list .user-image {
   opacity: 0.5;

@@ -12,11 +12,9 @@ import Avatar5 from '../../images/avatar-5.png';
 const Sidebar = () => {
     return(
         <>
-        <div className="navbar-collapse " id="sidebar">
+        <div className="navbar-collapse d-block " id="sidebar">
             <div className="sidebar-left d-flex">
-            {/* <button type="button" id="sidebarCollapse" className="navbar-btn">
-            <i className="fas fa-chevron-left"></i>
-            </button> */}
+         
 
             <button className="navbar-toggler d-xl-none  navbar-btn" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i className="fas fa-chevron-left"></i>
