@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <div className="wrapper">
-      <Router>
+      <Router basename={`${process.env.PUBLIC_URL}/`}>
         <Sidebar />
         <Main />
       </Router>
