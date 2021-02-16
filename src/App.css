@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap');
 
-body {
-  font-family: 'Source Sans Pro', sans-serif ;
-  background-color: #eff3f6 !important;
-  font-size: 12px;
-  position: relative;
-}
 * {
   box-sizing: border-box;
   font-family: 'Source Sans Pro', sans-serif
 }
+html {
+	min-height: 100%;
+  position: relative;
+}
+body {
+  font-family: 'Source Sans Pro', sans-serif ;
+  background-color: #eff3f6 !important;
+  font-size: 12px;
+}
+
 :focus {
   outline: none;
 }
@@ -531,8 +535,13 @@ div table thead th {
   .main-wrapper {
     margin-left: 0;
   }
+  #sidebar.show .sidebar-left {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+  }
   #sidebar:not(.show) .sidebar-left {
     transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
   }
   .header-section {
     padding-left: 15px;

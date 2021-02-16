@@ -1,90 +1,42 @@
 import React from 'react';
+import FetchData from '../Hooks/FetchData';
+
 
 const Table = () => {
-    return (
-        <>
+  const {data:salesTable} = FetchData('https://profitsales-f6634-default-rtdb.firebaseio.com/User/Jordan%20Jackson/salesTable.json');
+  return (
+    <>
 
-<div className="table-wrap w-100 overflow-auto">
-<table className="w-100 table table-light">
-    <thead>
-      <tr>
-        <th><span>Referrer</span></th>
-        <th>View</th>
-        <th>Sales</th>
-        <th>Conversion</th>
-        <th>Total <i className="fa fa-fw fa-sort"></i></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>note.com</td>
-        <td>54</td>
-        <td>12</td>
-        <td>10.5%</td>
-        <td>50%</td>
-      </tr>
-      <tr>
-        <td>Direct, email, IM</td>
-        <td>96</td>
-        <td>24</td>
-        <td>25%</td>
-        <td>$10</td>
-      </tr>
+     { salesTable &&  <div className="table-wrap w-100 overflow-auto">
+        <table className="w-100 table table-light">
+          <thead>
+            <tr>
+              <th><span>Referrer</span></th>
+              <th>View</th>
+              <th>Sales</th>
+              <th>Conversion</th>
+              <th>Total <i className="fa fa-fw fa-sort"></i></th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              salesTable.map((val)=> {
+                return  <tr>
+                <td>{val.referrer}</td>
+                <td>{val.view}</td>
+                <td>{val.sales}</td>
+                <td>{val.conversion}</td>
+                <td>{val.total}</td>
+              </tr>
+              })
+            }
+          </tbody>
+        </table>
+      </div>
+      }
 
-      <tr>
-        <td>Recommended</td>
-        <td>5</td>
-        <td>5</td>
-        <td>100%</td>
-        <td>$10</td>
-      </tr>
-
-      <tr>
-        <td>Dribbble</td>
-        <td>1</td>
-        <td>0</td>
-        <td>0.0%</td>
-        <td>$0</td>
-      </tr>
-
-      <tr>
-        <td>google.co.uk</td>
-        <td>5</td>
-        <td>0</td>
-        <td>0.0%</td>
-        <td>$0</td>
-      </tr>
-
-      <tr>
-        <td>google.com.tr</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0.0%</td>
-        <td>$0</td>
-      </tr>
-
-      <tr>
-        <td>mail.google.com</td>
-        <td>1</td>
-        <td>0</td>
-        <td>0.0%</td>
-        <td>$0</td>
-      </tr>
-
-      <tr>
-        <td>facebook.com</td>
-        <td>5</td>
-        <td>0</td>
-        <td>0.0%</td>
-        <td>$0</td>
-      </tr>
-     
-    </tbody>
-  </table>
-</div>
-
-        </>
-    )
+    </>
+  )
 }
 
 export default Table;
